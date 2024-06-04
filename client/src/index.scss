@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  user-select: none;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+// Variables
+// Colors, Gradients and Filters
+$text-color: whitesmoke;
+$bg-grad: linear-gradient(-240.32deg,
+    #5b1188 10.2%,
+    #2c185b 36.02%,
+    #081e3a 50.45%,
+    #051225 81.89%,
+    #040d1f 100.83%);
+$filter: drop-shadow(0px 0px 2px rgb(244, 175, 175)) drop-shadow(0px 0px 7px #f745d0) drop-shadow(0px 0px 10px #e380ff) drop-shadow(0px 0px 20px #914dff) drop-shadow(0px 0px 20px #4713f5);
+$gold-grad: linear-gradient(to right,
+    #ffd500 0,
+    #cb9b51 22%,
+    #f6e27a 45%,
+    #fcf484 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,
+    #ffd500 100%);
+
+@mixin glass-grad() {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+$max-width: 1280px;
+$nav-h: 5rem;
+$tablet: 560px;
+$lg-tablet: 750px;
+$laptop: 960px;

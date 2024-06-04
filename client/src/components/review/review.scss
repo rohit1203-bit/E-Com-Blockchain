@@ -1,0 +1,76 @@
+@use "sass:math";
+@import '../../index.scss';
+
+.card {
+  @include glass-grad;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  background-color: #0b2548;
+  border-radius: 15px;
+  padding: 3rem 1.5rem;
+
+  @media screen and (min-width:$tablet) {
+    padding: 3rem;
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      font-weight: 500;
+      letter-spacing: 1.5px;
+    }
+
+    span {
+      text-align: end;
+      font-size: 16px;
+      color: rgb(250, 73, 42);
+    }
+  }
+
+
+  @for $i from -4 through 4 {
+    &-#{$i} {
+      transition: all ease 400ms;
+
+      @if $i ==0 {
+        transform: translateX(0) scale(1);
+        z-index: 3;
+      }
+
+      @if abs($i)==1 {
+        $c: math.div(math.abs($i), $i);
+        transform: translateX(calc(15% * $c)) scale(90%);
+        z-index: 2;
+        opacity: 0;
+
+        @media screen and (min-width:$tablet) {
+          opacity: 1;
+        }
+      }
+
+      @if abs($i)==2 {
+        $c: math.div(math.abs($i), $i);
+        transform: translateX(calc(28% * $c)) scale(80%);
+        z-index: 1;
+        opacity: 0;
+
+        @media screen and (min-width:$lg-tablet) {
+          opacity: 1;
+        }
+      }
+
+      @if abs($i)>2 {
+        $c: math.div(math.abs($i), $i);
+        transform: translateX(calc(28% * $c)) scale(80%);
+        z-index: -1;
+        opacity: 0;
+      }
+    }
+  }
+
+}

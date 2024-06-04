@@ -1,0 +1,65 @@
+@import '../../../index.scss';
+
+.loginModal {
+  @include glass-grad;
+  backdrop-filter: blur(20px);
+  height: max-content;
+  width: max-content;
+  max-height: 90%;
+  max-width: 90%;
+  padding: 2rem;
+  overflow: auto;
+
+  .form {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+
+    &>label {
+      font-size: 0.7rem;
+      font-weight: 800;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 1rem;
+      }
+    }
+
+    &>input {
+      height: 2rem;
+      width: 100%;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid rgb(43, 1, 81);
+      font-size: 1rem;
+      color: white;
+
+      @media (min-width:$tablet) {
+        height: 3rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    &>button {
+      background: #2c185b;
+      color: $text-color;
+      padding: 1rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5rem;
+      border: 0.5px solid #3c0576;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        background: #081e3a;
+      }
+    }
+
+    span {
+      margin-left: 5px;
+      text-decoration: underline;
+      color: white;
+    }
+  }
+}

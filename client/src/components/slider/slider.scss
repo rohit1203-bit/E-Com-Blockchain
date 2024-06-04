@@ -1,0 +1,14 @@
+@import '../../index.scss';
+
+.slider {
+  height: max-content;
+  width: clamp(300px, 90%, 600px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 300px;
+
+  @media screen and (min-width:$tablet) {
+    min-height: 350px;
+  }
+}

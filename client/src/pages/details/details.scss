@@ -1,0 +1,85 @@
+@import '../../index.scss';
+
+.details {
+  width: 100%;
+  min-height: min(calc(100vh - $nav-h), 760px);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+
+  &-container {
+    @include glass-grad;
+    height: max-content;
+    width: 100%;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 100%;
+    gap: 1rem;
+
+    @media screen and (min-width:$tablet) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &-image {
+    max-height: 350px;
+    text-align: center;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+
+      @media screen and (min-width:$laptop) {
+        width: 80%;
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      letter-spacing: 1px;
+
+      .key {
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .value {
+        font-size: 2rem;
+        font-weight: 600;
+
+        &.description {
+          font-size: 1.3rem;
+        }
+      }
+
+    }
+
+    .buy {
+      background: #2c185b;
+      color: $text-color;
+      padding: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border-radius: 15px;
+      border: 0.5px solid #3c0576;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        background: #081e3a;
+      }
+    }
+  }
+}

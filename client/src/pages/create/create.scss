@@ -1,0 +1,111 @@
+@import '../../index.scss';
+
+.create {
+  width: 100%;
+  min-height: min(calc(100vh - $nav-h), 760px);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+
+  &-container {
+    @include glass-grad;
+    height: max-content;
+    width: 100%;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 100%;
+    gap: 1rem;
+
+    @media screen and (min-width:$tablet) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &-image {
+    min-height: 350px;
+    text-align: center;
+    overflow: hidden;
+
+
+    img {
+      height: 100%;
+      border-radius: 15px;
+      width: 100%;
+      object-fit: contain;
+      cursor: pointer;
+      display: inline-block;
+
+
+      @media screen and (min-width:$laptop) {
+        width: 80%;
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      letter-spacing: 1px;
+
+      .key {
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .value {
+        font-size: 2rem;
+        font-weight: 600;
+
+        &>input {
+          height: 3rem;
+          width: 100%;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-bottom: 2px solid rgb(43, 1, 81);
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: white;
+        }
+
+        &>textarea {
+          font-size: 1.5rem;
+          width: 100%;
+          resize: none;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-bottom: 2px solid rgb(43, 1, 81);
+          font-weight: 600;
+          color: white;
+        }
+      }
+
+    }
+
+    .buy {
+      background: #2c185b;
+      color: $text-color;
+      padding: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border-radius: 15px;
+      border: 0.5px solid #3c0576;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        background: #081e3a;
+      }
+    }
+  }
+}

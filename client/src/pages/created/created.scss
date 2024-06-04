@@ -1,0 +1,53 @@
+@import '../../index.scss';
+
+.created {
+  width: 100%;
+  min-height: min(calc(100vh - $nav-h), 760px);
+  padding: 2rem 1rem;
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+
+    .withdraw {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      button {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $gold-grad;
+        // background: #2c185b;
+        color: #2c185b;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 15px;
+        border: 0.5px solid #081e3a;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-products {
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    padding-block: 2rem;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media screen and (min-width:$tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width:$lg-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width:$laptop) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../index.scss';
+
+.reviews {
+  height: 100%;
+  // min-height: min(100vh, 760px);
+  width: 100%;
+  scroll-snap-align: start;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &-heading {
+    height: 5rem;
+    font-size: clamp(1rem, 6vw, 2rem);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+
+  &-cards {
+    width: 100%;
+    height: 100%;
+    min-height: calc(min(100vh, 720px) - $nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+
+    .icon {
+
+      &-left,
+      &-right {
+        cursor: pointer;
+        position: absolute;
+        top: calc(50%);
+        left: 0px;
+        transition: all ease 200ms;
+        z-index: 99;
+
+        transform: scale(200%);
+
+        &:hover {
+          transform: scale(250%);
+        }
+      }
+
+      &-right {
+        left: calc(100% - 40px);
+      }
+    }
+  }
+}
